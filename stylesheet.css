@@ -1,0 +1,254 @@
+:root {
+  --bg: #f3f7fb;
+  --surface: #ffffff;
+  --text: #1c2530;
+  --muted: #5b6b7b;
+  --brand: #0e7490;
+  --brand-soft: #d8f1f8;
+  --line: #d4e2ee;
+  --accent: #ea580c;
+  --shadow: 0 10px 28px rgba(15, 43, 68, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 10% 0%, #d7eff8 0%, transparent 40%),
+    radial-gradient(circle at 100% 20%, #ffe9d5 0%, transparent 35%),
+    var(--bg);
+}
+
+.container {
+  width: min(960px, calc(100% - 2rem));
+  margin: 2rem auto 3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1.2rem 1.3rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 1rem;
+  align-items: center;
+}
+
+.kicker {
+  margin: 0;
+  color: var(--brand);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: #0f2133;
+}
+
+h1 {
+  margin-top: 0.25rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2rem, 3.5vw, 2.9rem);
+  line-height: 1.1;
+}
+
+h2 {
+  margin-bottom: 0.7rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+p {
+  margin: 0.5rem 0 0;
+}
+
+.intro {
+  margin-top: 0.75rem;
+  max-width: 64ch;
+}
+
+.contact-row {
+  margin-top: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.contact-row a,
+.contact-row span {
+  display: inline-block;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: #eef6fb;
+  border: 1px solid #d6e6f2;
+  color: #18405f;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.contact-row a:hover {
+  border-color: #95cbe0;
+  background: var(--brand-soft);
+}
+
+.avatar {
+  width: 130px;
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #d7eef8, #fce7d5);
+  border: 1px solid #cfe1ee;
+  color: #0f3652;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tags {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tags span {
+  border: 1px solid #cfe2ef;
+  background: #f6fbfe;
+  color: #244a66;
+  padding: 0.34rem 0.62rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.72rem;
+}
+
+.timeline li {
+  display: grid;
+  gap: 0.08rem;
+  padding-bottom: 0.72rem;
+  border-bottom: 1px dashed #d9e4ee;
+}
+
+.timeline li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.timeline strong {
+  color: #0f314c;
+  font-size: 0.95rem;
+}
+
+.timeline span {
+  color: var(--muted);
+}
+
+.timeline a,
+.pub-links a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.timeline a:hover,
+.pub-links a:hover {
+  color: var(--accent);
+}
+
+.compact li {
+  padding-bottom: 0.55rem;
+}
+
+.pub-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.pub-card {
+  border: 1px solid #d4e4ef;
+  border-radius: 14px;
+  padding: 0.9rem;
+  background: linear-gradient(180deg, #fcfeff 0%, #f9fcff 100%);
+}
+
+.pub-venue {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #0f5f7b;
+}
+
+.pub-authors {
+  color: #41586f;
+  font-size: 0.93rem;
+}
+
+.pub-links {
+  margin-top: 0.35rem;
+  font-size: 0.93rem;
+  color: #2f465b;
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(960px, calc(100% - 1rem));
+    margin: 1rem auto 1.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .avatar {
+    width: 96px;
+    border-radius: 18px;
+  }
+
+  .contact-row a,
+  .contact-row span {
+    font-size: 0.85rem;
+  }
+}
