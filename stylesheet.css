@@ -9,6 +9,10 @@
   --accent: #ea580c;
 }
 
+html {
+  color-scheme: light dark;
+}
+
 a {
   color: var(--brand);
   text-decoration: none;
@@ -27,7 +31,7 @@ tr,
 p,
 a,
 li {
-  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
   font-size: 15px;
   color: var(--text);
 }
@@ -42,13 +46,13 @@ body {
 }
 
 strong {
-  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
   font-weight: 600;
 }
 
 h2 {
   margin: 0;
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Merriweather", Georgia, serif;
   font-weight: 700;
   font-size: 27px;
   color: #0f2133;
@@ -56,7 +60,7 @@ h2 {
 
 .main {
   width: 100%;
-  max-width: 920px;
+  max-width: 1200px;
   border: 0;
   border-spacing: 0;
   border-collapse: separate;
@@ -80,21 +84,52 @@ h2 {
   border-top: 1px solid #e4edf4;
 }
 
+.social-icons {
+  margin-top: 12px;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  border-radius: 999px;
+  border: 1px solid #bfd8e8;
+  background: #eef7fc;
+  color: #0d5574;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.social-icon:hover {
+  background: #dff1fb;
+  border-color: #9bc7df;
+  color: #0a4660;
+}
+
 .papers {
-  border-spacing: 0 10px;
+  border-spacing: 0 8px;
 }
 
 .papertitle {
-  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
-  font-size: 16px;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  font-size: 18px;
   font-weight: 700;
   color: #0f2133;
+  line-height: 1.35;
 }
 
 .name {
   padding-top: 20px;
   margin: 0;
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Merriweather", Georgia, serif;
   font-size: 44px;
   color: #0f2133;
 }
@@ -114,6 +149,104 @@ h2 {
   font-weight: 700;
 }
 
+.thumb-placeholder {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.thumb-placeholder picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.teaser-thumb {
+  aspect-ratio: 480 / 206;
+  min-height: 210px;
+}
+
+.avatar-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  display: block;
+}
+
+.teaser-media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  background: #eef4f9;
+  border-radius: 10px;
+}
+
+.pub-entry {
+  padding: 12px 16px;
+  vertical-align: middle;
+  border: 1px solid #dbe7f1;
+  border-radius: 12px;
+  background: #fbfdff;
+}
+
+.pub-meta {
+  margin-top: 6px;
+  color: #4d6074;
+}
+
+.pub-meta em {
+  font-size: 16px;
+}
+
+.author-self {
+  font-weight: 700;
+  color: #0b4f6a;
+  background: #dff1fb;
+  border: 1px solid #b8dced;
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+
+.pub-actions {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pub-btn {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #b8d5e6;
+  background: #eef7fc;
+  color: #0d5574;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.pub-btn:hover {
+  background: #dff1fb;
+  border-color: #9bc7df;
+  color: #0a4660;
+}
+
+.pub-btn.disabled {
+  border-color: #d7e3ec;
+  background: #f5f9fc;
+  color: #7b91a4;
+  cursor: default;
+}
+
+.pub-summary {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
 ul {
   margin: 10px 0 0 0;
   padding-left: 20px;
@@ -128,7 +261,7 @@ p {
   margin-top: 10px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .main {
     margin: 10px;
     border-radius: 12px;
@@ -136,6 +269,30 @@ p {
 
   .name {
     font-size: 34px;
+  }
+
+  .papers tr {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .papers td {
+    display: block;
+    width: 100% !important;
+    padding: 8px 10px !important;
+  }
+
+  .thumb-placeholder {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .pub-entry {
+    padding: 10px 12px;
+  }
+
+  .pub-actions {
+    gap: 6px;
   }
 
   body,
@@ -146,5 +303,127 @@ p {
   a,
   li {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .main {
+    margin: 8px;
+  }
+
+  .papers tr {
+    margin-bottom: 8px;
+  }
+
+  .papers td {
+    padding: 6px 8px !important;
+  }
+
+  .thumb-placeholder {
+    max-width: 100%;
+  }
+
+  .pub-entry {
+    padding: 9px 10px;
+    border-radius: 10px;
+  }
+
+  .papertitle {
+    font-size: 17px;
+  }
+
+  .pub-btn {
+    padding: 3px 8px;
+    font-size: 12px;
+  }
+
+  .pub-summary {
+    margin-top: 6px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e141b;
+    --surface: #121b24;
+    --text: #dce7f1;
+    --muted: #a8bbcd;
+    --brand: #6dd3f5;
+    --brand-soft: #183347;
+    --line: #243646;
+    --accent: #ffb36b;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 10% 0%, #143042 0%, transparent 40%),
+      radial-gradient(circle at 100% 20%, #3b2a1e 0%, transparent 35%),
+      var(--bg);
+  }
+
+  .main {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  }
+
+  .section + .section {
+    border-top: 1px solid #213242;
+  }
+
+  h2,
+  .papertitle,
+  .name {
+    color: #f0f6fc;
+  }
+
+  .pub-entry {
+    border: 1px solid #2a3f50;
+    background: #15212c;
+  }
+
+  .pub-meta {
+    color: #b8cada;
+  }
+
+  .author-self {
+    color: #d5f4ff;
+    background: #1b3f55;
+    border-color: #3d6680;
+  }
+
+  .social-icon {
+    border-color: #3b5568;
+    background: #183042;
+    color: #9de4ff;
+  }
+
+  .social-icon:hover {
+    border-color: #4a7089;
+    background: #1c3a4f;
+    color: #b8ecff;
+  }
+
+  .pub-btn {
+    border-color: #3b5568;
+    background: #183042;
+    color: #9de4ff;
+  }
+
+  .pub-btn:hover {
+    background: #1c3a4f;
+    border-color: #4a7089;
+    color: #b8ecff;
+  }
+
+  .pub-btn.disabled {
+    border-color: #334a5c;
+    background: #162734;
+    color: #7f99ab;
+  }
+
+  .avatar-placeholder,
+  .thumb-placeholder {
+    border: 1px solid #2b4356;
+    background: linear-gradient(135deg, #183447, #3b2a1e);
+    color: #dce7f1;
   }
 }
